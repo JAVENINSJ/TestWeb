@@ -1,0 +1,162 @@
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+}
+  
+p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+}
+
+.bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+
+.bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+}
+
+.bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+}
+
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+
+.anim2{
+    
+    counter-reset: cnt;
+    
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    width: 420px;
+    height: 275px;
+    margin: auto;
+    
+}
+
+.anim2::before{
+    
+    display: block;
+    content:'Hover over these items:';
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+    padding:15px;
+    
+}
+
+.anim2 span{
+    
+    display:inline-block;
+    padding:2px 6px;
+    background-color:#78CCD2;
+    color:#186C72;
+    border-radius:4px;
+    margin:3px;
+    cursor:default;
+    
+}
+
+.anim2 span::after{
+    
+    counter-increment: cnt;
+    content: " #" counter(cnt);
+    display: inline-block;
+    padding: 4px;
+    
+}
+
+.anim2 span::before{
+    
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    content:attr(data-title);
+    color:#666;
+
+    opacity:0;
+
+    /* Animate the transitions */
+    -webkit-transition:opacity 0.4s;
+    transition:opacity 0.4s;
+    
+}
+
+.anim2 span:hover::before{
+    
+    opacity:1;
+    
+}
+
+.grad{
+    text-align:center;
+    padding:20px 0;
+    width:450px;
+    margin: 0 auto;
+}
+
+.grad div{
+    width:100px;
+    height:100px;
+    display:inline-block;
+    margin:2px;
+
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) inset, 0 1px 1px #DDD;
+    border-radius:2px;
+
+    color:#666;
+    vertical-align: top;
+    line-height: 230px;
+    font-size: 12px;
+}
+
+#el1{
+    background:linear-gradient(to bottom, #8dd2d9 , #58c0c7);
+}
+
+#el2{
+    background:radial-gradient(#77d19e,#46c17b);
+}
+
+#el3{
+    background:repeating-linear-gradient(-45deg, #de9dd4, #de9dd4 5px, white 5px, white 10px);
+}
+
+#el4{
+    background:repeating-radial-gradient(#b8e7bf, #b8e7bf 5px, white 5px, white 10px);
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 22, 2021, 12:23:31 PM
+    Author     : Mr. Nobody
+*/
+

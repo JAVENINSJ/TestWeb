@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>JJs Test Site </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ </head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Me</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+          <li style="color: black">HTML is all about applying meaning to content. Whereas most HTML tags apply meaning (p makes a paragraph, h1 makes a heading etc.), the span and div tags apply no meaning at all. This might sound about as useful as a foam hammer but they are actually used quite extensively in conjunction with CSS.</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h3 class="margin">Who Am I?</h3>
+  <img src="images/html1.png" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+  <h3>I'm an adventurer</h3>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">What Am I?</h3>
+  <p>I happen to be a lonely search button that has been implemented into this test site for no reason at all besides to show that you can create an artificial search button. I serve no purpose. I have no meaning. Go ahead. Click me to see how i bring you to this very same web page!</p>
+  <a href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </a>
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">    
+    <h3 class="margin">Fun CSS features</h3><br>
+    <div class="row">
+        <div class="col-sm-4">
+            
+            <h3>Calculating Values With calc()</h3>
+
+            <p>Another new and awesome CSS feature is the calc() function. It allows you 
+            to do simple arithmetic calculations in CSS. You can use it anywhere a 
+            length or a size is required. What is even cooler, is that you can freely
+            mix different units, like percentages and pixels. This makes a lot of 
+            layout hacks that you might have used in the past obsolete. The best news? 
+            It works in IE9 and up, prefix-free.</p>
+
+            <p>Learn more about the calc() function 
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/calc" target="_blank" rel="noreferrer noopener">here</a>
+            , or see a 
+            <a href="https://caniuse.com/#feat=calc" target="_blank" rel="noreferrer noopener">compatibility table</a>
+            .</p>
+
+            <img src="images/code1.png" class="img-responsive margin" style="width:100%" alt="Image">
+        
+        </div>
+        <div class="col-sm-4">
+            
+            <h3>Generated Content and Counters</h3>
+
+            <p>Generated content is a powerful tool in the hands of developers, made 
+            available by the [::before] and [::after] pseudo elements. This feature 
+            lets you use less HTML to achieve the same layouts. This is especially 
+            beneficial in cases where you need extra box shadows or other visual 
+            elements that would require extra spans or divs. In the end, you get a 
+            more minimal and semantically correct HTML.</p>
+
+            <p>CSS3 also gives pseudo elements access to 
+            <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters" target="_blank" rel="noreferrer noopener">counters</a>
+            , which can be incremented with a CSS rule. They can also access 
+            attributes from the parent elements that contain them.</p>
+
+            <p>Generated content is supported everywhere, including IE9 and up.</p>
+
+            <div class="anim2">
+                <span data-title="I have a wonderful title!">This is item</span>
+                <span data-title="These titles are shown only using CSS, no JavaScript is used!">This is item</span>
+                <span data-title="Hello there!">This is item</span>
+                <span data-title="Generated content is awesome!">This is item</span>
+            </div>
+            
+        </div>
+        <div class="col-sm-4"> 
+            
+            <h3>Gradients</h3>
+            
+            <p>Gradients give web designers the power to create smooth transitions
+            between colors without having to resort to images. CSS gradients 
+            also look great on retina displays, because they are generated on 
+            the fly. They can be linear or radial, and can be set to repeat. 
+            They have been around for some time, but after a few minor syntax 
+            changes over the last months, they are finally available nearly 
+            everywhere, prefix-free!</p>
+            
+            <div class="grad">
+                <div id="el1">Linear</div>
+                <div id="el2">Radial</div>
+                <div id="el3">Repeating Lin.</div>
+                <div id="el4">Repeating Rad.</div>
+            </div>
+            
+            <p>See a detailed tutorial 
+            <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_gradients" target="_blank" rel="noreferrer noopener">here</a>
+            , and a compatibility table 
+            <a href="https://caniuse.com/#feat=css-gradients" target="_blank" rel="noreferrer noopener">
+            here</a>.</p>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+</footer>
+
+</body>
+</html>

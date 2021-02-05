@@ -26,7 +26,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-          <li style="color: black">HTML is all about applying meaning to content. Whereas most HTML tags apply meaning (p makes a paragraph, h1 makes a heading etc.), the span and div tags apply no meaning at all. This might sound about as useful as a foam hammer but they are actually used quite extensively in conjunction with CSS.</li>
+          <li style="color: black"></li>
+          <li><a href="#div">< DIV ></a></li>
+          <li><a href="#span">< SPAN ></a></li>
+          <li><a href="#knifs">< CSS ></a></li>
       </ul>
     </div>
   </div>
@@ -36,12 +39,29 @@
 <div class="container-fluid bg-1 text-center">
   <h3 class="margin">Who Am I?</h3>
   <img src="images/html1.png" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
-  <h3>I'm an adventurer</h3>
+  <h3 id="div">DIV</h3>
+  <p>The < div > tag defines a division or a section in an HTML document.</p>
+
+  <p>The < div > tag is used as a container for HTML elements - which is 
+      then styled with CSS or manipulated with JavaScript.</p>
+
+  <p>The < div > tag is easily styled by using the class or id attribute.</p>
+  
+  <p>Any sort of content can be put inside the < div > tag!</p>
+
+  <p>Note: By default, browsers always place a line break before and
+      after the < div > element.</p>
 </div>
 
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center">
-  <h3 class="margin">What Am I?</h3>
+  <h3 id="span" class="margin">SPAN</h3>
+  <p>The < span > tag is an inline container used to mark up a part of a text, or a part of a document.</p>
+
+  <p>The < span > tag is easily styled by CSS or manipulated with JavaScript using the class or id attribute.</p>
+
+  <p>The < span > tag is much like the < div > element, but < div > is a block-level element and < span > is an inline element.</p>
+  
   <p>I happen to be a lonely search button that has been implemented into this test site for no reason at all besides to show that you can create an artificial search button. I serve no purpose. I have no meaning. Go ahead. Click me to see how i bring you to this very same web page!</p>
   <a href="#" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-search"></span> Search
@@ -50,7 +70,7 @@
 
 <!-- Third Container (Grid) -->
 <div class="container-fluid bg-3 text-center">    
-    <h3 class="margin">Fun CSS features</h3><br>
+    <h3 id="knifs" class="margin">Fun CSS features</h3><br>
     <div class="row">
         <div class="col-sm-4">
             
@@ -117,11 +137,14 @@
                 <div id="el4">Repeating Rad.</div>
             </div>
             
+            <img src="images/code2.png" class="img-responsive margin" style="width:100%" alt="Image">
+                    
             <p>See a detailed tutorial 
             <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_gradients" target="_blank" rel="noreferrer noopener">here</a>
             , and a compatibility table 
             <a href="https://caniuse.com/#feat=css-gradients" target="_blank" rel="noreferrer noopener">
             here</a>.</p>
+            
             
         </div>
     </div>

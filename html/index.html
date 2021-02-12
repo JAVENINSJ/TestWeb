@@ -5,39 +5,37 @@
   <title>JJs Test Site </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="../css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- </head>
+</head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Me</a>
+<nav class="navbar sticky" id="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Me</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="laukums.html">< Field ></a>
+            <li><a href="#div">< DIV ></a></li>
+            <li><a href="#span">< SPAN ></a></li>
+            <li><a href="#knifs">< CSS ></a></li>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="#div">< DIV ></a></li>
-          <li><a href="#span">< SPAN ></a></li>
-          <li><a href="#knifs">< CSS ></a></li>
-      </ul>
-    </div>
-  </div>
 </nav>
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
   <h3 class="margin">Who Am I?</h3>
-  <img src="images/html1.png" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+  <img src="../images/html1.png" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
   <h3 id="div">DIV</h3>
   <p>The < div > tag defines a division or a section in an HTML document.</p>
 
@@ -88,7 +86,7 @@
             <a href="https://caniuse.com/#feat=calc" target="_blank" rel="noreferrer noopener">compatibility table</a>
             .</p>
 
-            <img src="images/code1.png" class="img-responsive margin" style="width:100%" alt="Image">
+            <img src="../images/code1.png" class="img-responsive margin" style="width:100%" alt="Image">
         
         </div>
         <div class="col-sm-4">
@@ -136,7 +134,7 @@
                 <div id="el4">Repeating Rad.</div>
             </div>
             
-            <img src="images/code2.png" class="img-responsive margin center" alt="Image">
+            <img src="../images/code2.png" class="img-responsive margin center" alt="Image">
                     
             <p>See a detailed tutorial 
             <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_gradients" target="_blank" rel="noreferrer noopener">here</a>

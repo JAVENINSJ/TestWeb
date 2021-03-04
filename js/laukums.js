@@ -4,8 +4,12 @@
  * and open the template in the editor.
  */
 /* global field */
-var clickd;
+var startTime;
+var lastClick = -1;
+var stage = 0;
+var revealed;
 var field = [];
+var input;
 var first = [   "Dollar" ,"Cent"    ,"Pound"   ,"Yen",
                 "Franc"  ,"Euro"    ,"Drachma" ,"Sheqel",
                 "Dong"   ,"Peso"    ,"Hryvnia" ,"Won",
@@ -18,8 +22,7 @@ var second = [  "&#36"    ,"&#162"   ,"&#163"   ,"&#165",
                 "&#x20B9" ,"&#8365"  ,"&#8371"  ,"&#8370",
                 "&#8366"  ,"&#8368"];  
             
-var stage = true;
-var index = 0;
+
 
 function shuffle(array) {
     
@@ -36,53 +39,63 @@ function shuffle(array) {
     
 }
 
+function start(){
+    
+    startTime = new Date();
+    
+}
+
+function end(){
+    
+    alert("You managed to complete the game in "+(new Date() - startTime)/1000+" seconds!");
+    
+}
+
 function drawField(){
+    
+    if(input>6||input<1||input*input%2==1)return;    
         
     if(document.getElementById("divs")!=null){
         document.getElementById("divs").remove();
-    }
-    
-    let input = document.getElementById("input").value;
-    
-    if(input>6||input<1||input*input%2==1)return;
+    }    
     
     let z = document.createElement("div");
-      
-    
-    while(index<input*input/2){
-        
-        field.push(new Array(first[index],0));
-        field.push(new Array(second[index],0));
-        index++;
-        
-    }
-    
-    index=0;
-    field=shuffle(field);
-
-    
     z.setAttribute("id","divs");
+    revealed = [];
+    field = [];
+    start();
+    input = document.getElementById("inputs").value;
+
+    for(let i = 0; i < input*input/2; i++){
+        
+        field.push(first[i]);
+        field.push(second[i]);
+        
+    }  
+
+    field=shuffle(field);
     
-    for(let y=0; y<input; y++){        
+    for(let y=0; y<input; y++){     
+        
+        let row = document.createElement("div");
+        
         for(let x=0; x<input; x++){
             
             let temp = document.createElement("button");
+            temp.setAttribute("id",y*input+x);
             temp.setAttribute("class","butt");
-            temp.setAttribute("id",index);
-            temp.innerHTML=field[index][0];
+            temp.innerHTML = "";
             
             temp.onclick=()=>{
-                console.log(temp.innerHTML);
-                temp.parentNode.remove();
+                console.log("clicked");
+                change(temp);
             };
             
-            index++;
-            
-            z.appendChild(temp);
+            row.appendChild(temp);
             
         }
         
-        z.innerHTML+="<br>";
+        z.appendChild(row);
         
     }
     
@@ -90,40 +103,70 @@ function drawField(){
 
 }
 
-function pressed(temp){
+function change(temp){
     
-    console.log(temp.id);
-//    if(!Number.isInteger(temp.innerHTML))return;
-//                
-//                if(stage){   
-//                                        
-//                    clickd = temp.innerHTML-1;
-//                    temp.innerHTML = fields[clickd][0];
-//                    field[clickd][1] = 1;
-//                    stage = false;
-//                        
-//                }else{
-//                    
-//                    temp.innerHTML = fields[temp.innerHTML-1][0];
-//
-//                    if( first.indexOf(fields[clickd][0]) == 
-//                        second.indexOf(fields[temp.innerHTML-1][0]) 
-//                        &&
-//                        second.indexOf(fields[clickd][0]) == 
-//                        first.indexOf(fields[temp.innerHTML-1][0]) ){
-//
-//                        fields[clickd][1] = 2;
-//                        fields[temp.innerHTML-1][1] = 2;
-//                        temp.innerHTML = fields[temp.innerHTML-1][0];
-//
-//                    }else{
-//                        
-//                        
-//                        
-//                    }
-//
-//                    stage=true;
-//                    
-//                }                
+    console.log(stage);
+    if(stage == -1 || temp.id == lastClick)return;
+    
+    console.log("changed");
+    clickId = temp.id;
+    
+    if(revealed.indexOf(clickId) != -1)return;
+    else{
+        
+        if(stage == 0){
+            
+            lastClick = clickId;
+            stage = 1;
+            temp.innerHTML = field[clickId];
+            temp.style.color = "#000000";
+            temp.style.background = "#FEE12B"; 
+            
+        }else{
+         
+            if(first.indexOf(field[clickId]) == second.indexOf(field[lastClick])&&
+               second.indexOf(field[clickId]) == first.indexOf(field[lastClick])){
+                   
+                revealed.push(clickId);
+                revealed.push(lastClick);
+                temp.innerHTML = field[clickId];
+                temp.style.color = "#000000";
+                temp.style.background = "#FEE12B";
+                stage = -1;
+                setTimeout(function(){
+                    
+                    temp.style.background = "#03AC13";
+                    document.getElementById(lastClick).style.background = "#03AC13";
+                    lastClick = -1;
+                    stage = 0;
+                    if(revealed.length >= input*input)end();
+                    
+                },1000);
+                    
+            }else{
+                
+                temp.style.background = "#FF0000";
+                temp.style.color = "#000000";
+                document.getElementById(lastClick).style.background = "#FF0000";
+                temp.innerHTML = field[clickId];   
+                stage = -1;
+                setTimeout(function(){
+                    
+                    temp.style.background = "";
+                    temp.style.color = "";
+                    temp.innerHTML = "";
+                    document.getElementById(lastClick).style.background = "";
+                    document.getElementById(lastClick).style.color = "";
+                    document.getElementById(lastClick).innerHTML = "";
+                    
+                    lastClick = -1;
+                    stage = 0;
+                    
+                },1500);
+                    
+            }
+            
+        }   
+        
+    }
 }
-

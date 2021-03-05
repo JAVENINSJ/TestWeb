@@ -8,22 +8,19 @@ and open the template in the editor.
     Author     : Mr. Nobody
 */
 body{
-    background: #000000;
+    background: #162447;
     color: #ffffff;
     text-align: center;
+    font-family: 'Courier New', monospace;
 }
 
 .butt{
-    background: #14184e;
-    width: 125px;
-    height: 125px;
+    background: #1b1b2f;
+    width: 100px;
+    height: 100px;
     margin: 10px;
     color: #ffffff;
-    font-size: 29px;
+    font-size: 20px;
     vertical-align: middle;
-}
-
-#fields{
-    background: #744d30;
 }
 

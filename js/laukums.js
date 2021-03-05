@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/* global field */
+
 var startTime;
 var lastClick = -1;
 var stage = 0;
@@ -47,7 +47,9 @@ function start(){
 
 function end(){
     
-    alert("You managed to complete the game in "+(new Date() - startTime)/1000+" seconds!");
+    setTimeout(function(){
+        alert("You managed to complete the game in "+(new Date() - startTime)/1000+" seconds!");
+    },100);
     
 }
 
@@ -121,8 +123,8 @@ function change(temp){
             lastClick = clickId;
             stage = 1;
             temp.innerHTML = field[clickId];
-            temp.style.color = "#000000";
-            temp.style.background = "#FEE12B"; 
+            temp.style.color = "#FFFFFF";
+            temp.style.background = "#1F4068"; 
             
         }else{
          
@@ -132,13 +134,15 @@ function change(temp){
                 revealed.push(clickId);
                 revealed.push(lastClick);
                 temp.innerHTML = field[clickId];
-                temp.style.color = "#000000";
-                temp.style.background = "#FEE12B";
+                temp.style.color = "#FFFFFF";
+                temp.style.background = "#1F4068";
                 stage = -1;
                 setTimeout(function(){
                     
-                    temp.style.background = "#03AC13";
-                    document.getElementById(lastClick).style.background = "#03AC13";
+                    temp.style.background = "#a7c5eb";
+                    temp.style.color = "#000000";
+                    document.getElementById(lastClick).style.background = "#a7c5eb";
+                    document.getElementById(lastClick).style.color = "#000000";
                     lastClick = -1;
                     stage = 0;
                     if(revealed.length >= input*input)end();
@@ -147,9 +151,10 @@ function change(temp){
                     
             }else{
                 
-                temp.style.background = "#FF0000";
+                temp.style.background = "#e43f5a";
                 temp.style.color = "#000000";
-                document.getElementById(lastClick).style.background = "#FF0000";
+                document.getElementById(lastClick).style.background = "#e43f5a";
+                document.getElementById(lastClick).style.color = "#000000";
                 temp.innerHTML = field[clickId];   
                 stage = -1;
                 setTimeout(function(){

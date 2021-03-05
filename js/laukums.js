@@ -52,8 +52,10 @@ function end(){
 }
 
 function drawField(){
-    
-    if(input>6||input<1||input*input%2==1)return;    
+   
+    if(document.getElementById("inputs").value>6 ||
+       document.getElementById("inputs").value<1 ||
+       document.getElementById("inputs").value%2 == 1)return;    
         
     if(document.getElementById("divs")!=null){
         document.getElementById("divs").remove();
